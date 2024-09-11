@@ -26,7 +26,6 @@
           SignUpService.saveUserInfo(signUpCtrl.user);
           signUpCtrl.success = true;
           signUpCtrl.error = false;
-          signUpCtrl.user = {};  
 
         }
       })
