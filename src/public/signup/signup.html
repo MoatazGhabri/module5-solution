@@ -1,0 +1,34 @@
+<form name="signUpForm" ng-submit="signUpCtrl.submit()" novalidate>
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" name="firstName" ng-model="signUpCtrl.user.firstName" required>
+   
+  </div>
+
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text" name="lastName" ng-model="signUpCtrl.user.lastName" required>
+    
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" name="email" ng-model="signUpCtrl.user.email" required>
+    
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" ng-model="signUpCtrl.user.phone" required>
+   
+  </div>
+
+  <div class="form-group">
+    <label>Favorite Dish</label>
+    <input type="text" name="favoriteDish" ng-model="signUpCtrl.user.favoriteDish" required>
+    <p ng-if="signUpCtrl.error" class="alert alert-danger">No such menu number exists.</p>
+  </div>
+
+  <button type="submit" class="btn btn-primary" ng-disabled="signUpForm.$invalid">Submit</button>
+  <p ng-if="signUpCtrl.success" class="alert alert-success">Your information has been saved.</p>
+</form>

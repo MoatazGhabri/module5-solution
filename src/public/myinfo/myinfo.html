@@ -1,0 +1,32 @@
+<div class="my-info-container not-signed-up" ng-if="!myInfoCtrl.user">
+  <p>Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
+</div>
+
+<div class="my-info-container" ng-if="myInfoCtrl.user">
+  <h3>Your Info</h3>
+  <p>First Name: {{ myInfoCtrl.user.firstName }}</p>
+  <p>Last Name: {{ myInfoCtrl.user.lastName }}</p>
+  <p>Email: {{ myInfoCtrl.user.email }}</p>
+  <p>Phone: {{ myInfoCtrl.user.phone }}</p>
+  <p>Favorite Dish: {{ myInfoCtrl.user.favoriteDish }}</p>
+
+  <div class="favorite-dish-container" ng-if="myInfoCtrl.menuItem">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="menu-item-photo">
+          <div class="favorite-dish-title">{{myInfoCtrl.menuItem.short_name}}</div>
+          <img class="img-responsive" width="250" height="150"
+               ng-src="images/menu/{{myInfoCtrl.categoryShortName}}/{{myInfoCtrl.menuItem.short_name}}.jpg"
+               alt="{{myInfoCtrl.menuItem.name}}">
+      </div>
+    </div>
+
+   
+      <div class="favorite-dish-description">
+        <h3 class="favorite-dish-title">{{myInfoCtrl.menuItem.name}}</h3>
+        <p class="favorite-dish-description">{{myInfoCtrl.menuItem.description}}</p>
+      </div>
+    </div>
+    <hr class="visible-xs">
+  </div>
+</div>
